@@ -26,6 +26,18 @@
             margin:auto;
             padding: 10px;
         }
+        .myClass {
+            color: blue;
+            background:black;
+        }
+        #box{
+            background: darkgray;
+            color: wheat;
+            width: 500px;
+            height: 90px;
+            padding: 40px;
+            text-align: center;
+        }
     </style>
     
 
@@ -36,14 +48,18 @@
     </header>
         <br>
     <div id= "container">
-        
+        <button id="btnFadeOut">Fade Out</button>
+        <button id="btnFadeIn">Fade In</button>
+        <button id="btnFadeTog">Fade Toggle</button>
+        <hr>
+        <div id="box"><h1>Hello World</h1></div>
 <h3>Mouse Event</h3>
     <button id="btn1"> Button3 </button>
     <button id="btn2"> Button4 </button>
 <br>
 
 <h1 id=" heading1"> Heading One</h1>
-<p id =" para1">Lorem ipsum dolor sit amet, 
+<p class =" para1">Lorem ipsum dolor sit amet, 
     consectetur adipisicing elit. 
     Odit animi omnis voluptatibus error,<span> maximles iotsa 
     tiasdasd siafas asf iavvw </span>otsad asocmbn</p>
@@ -53,8 +69,9 @@
     consectetur adipisicing elit. 
     Odit animi omnis voluptatibus error,<span> maximles iotsa 
     tiasdasd siafas asf iavvw </span>otsad asocmbn</p>
+    <div id="myDiv"></div>
 
-    <ul id="list">
+ <ul id="list">
         <li> List Items</li>
         <li> List Items</li>
         <li> List Items</li>
@@ -78,7 +95,7 @@
      </select>   
    
     <input type='submit' value="button 1">
-    <input type='text'>
+   
     <br>
 </form>
 <p class="p10">Lorem ipsum dolor sit amet, consectetur 
@@ -87,9 +104,52 @@
 
     <a href="https://google.com">Google</a>
     <a href="http://msn.com">MSN</a>
+<ul>
+    <li>List Item</li>
+    <li>List Item</li>
+    <li>List Item</li>
+    <li>List Item</li>
+    
+    <input type='text' id="newItem">
+
+</ul>
+<ul id="users"></ul>
 
 </div>
     <script>
+        $("#btnFadeOut").click(function(){
+            $('#box').fadeOut(3000, function(){
+                $('#btnFadeOut').text('Its Gone')
+            })
+        })
+        /*
+        $('#newItem').keyup(function(e){
+            var code=e.which;
+            if(code==13){
+                e.preventDefault();
+                $('ul').append('<li>'+e.target.value+'</li>')
+            }
+        })
+//var newArr = $('ul#list li').toArray();
+//console.log(newArr)
+//var newArr = $('ul#list li').toArray();
+//$.each(newArr, function(i, val){
+            //console.log(val.innerHTML)
+       // })
+      /*  var myArr = ["brad", "Jose", "Maria"];
+        $.each(myArr, function(i, val){
+            $('#users').append('<li>'+val+'</li>')
+        })*/
+//$('p.para1').css({color:"red",backgorung:"#ccc"})
+
+//$("p.para2").removeClass('myClass');
+/*
+$('#btn1').click(function(){
+    $('p.para2').toggleClass('myClass')
+});
+//$('#myDiv').text('hello world')
+$('#myDiv').html('<h3>hello world</h3>')
+alert($('#myDiv').text())
         /*
         $('#btn1').click(function(){
             alert("Button Clicked");
@@ -152,7 +212,7 @@ $('input').blur(function(){
 $('input').keyup(function(e){
     console.log(e.target.value)
 })
-*/
+
 $('select#gender').change(function(e){
     alert(e.target.value);
 });
@@ -161,6 +221,18 @@ $('#form').submit(function(e){
     var name =$('input#name').val()
     console.log(name)
 })
+$('ul').append('<li>Append List Item</li>')
+$('ul').prepend('<li>Prepend List Item</li>')
+$('.para1').appendTo('.para2')
+$('.para1').prependTo('.para2')
+$('ul').before('<h4>Hello</h4>')
+//$('ul').empty()
+$('a').attr("target", "_blank")
+alert ($('a').attr('href'))
+$('a').removeAttr("target")
+*/
+//$("p").wrap('<h1>')
+
     </script>
 </body>
 </html>
